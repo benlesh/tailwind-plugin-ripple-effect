@@ -29,9 +29,18 @@ export default {
 
 ## Start Listening For Ripple Clicks
 
-Then you **MUST** execute `startRippleEffect()` somewhere in your application. This is a lightweight event handler that must be wired up. This will most often be done in your root component, but could be done just at the top level when your application loads. Calling `startRippleEffect()` will return a function that can be called to remove the event handler. This can be useful if you want to add and remove the feature during hot reloads, but is generally not required.
+Then you **MUST** execute `startRippleEffect()` from `tailwind-plugin-ripple-effect/start` somewhere in your application. This is a lightweight event handler that must be wired up. This will most often be done in your root component, but could be done just at the top level when your application loads. Calling `startRippleEffect()` will return a function that can be called to remove the event handler. This can be useful if you want to add and remove the feature during hot reloads, but is generally not required.
 
 NOTE: If you stop using `ripple-effect`, you'll want to remove the call to `startRippleEffect()`. There's no efficient way to dynamically add the required JavaScript just because a class was used.
+
+```ts
+import { startRippleEffect } from "tailwind-plugin-ripple-effect/start";
+
+const stop = startRippleEffect();
+
+// If you wanted to stop listening for ripple effect clicks you can do that:
+// stop()
+```
 
 ## API
 
