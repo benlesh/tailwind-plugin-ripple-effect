@@ -1,0 +1,36 @@
+{
+  "name": "tailwind-plugin-ripple-effect",
+  "version": "0.0.1",
+  "description": "A Tailwind plugin for adding ripple animations on click",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "start.js",
+    "start.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benlesh/tailwind-plugin-ripple-effect.git"
+  },
+  "keywords": [
+    "Tailwind",
+    "Material",
+    "UI",
+    "ripple"
+  ],
+  "author": "Ben Lesh <ben@benlesh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benlesh/tailwind-plugin-ripple-effect/issues"
+  },
+  "homepage": "https://github.com/benlesh/tailwind-plugin-ripple-effect#readme",
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
