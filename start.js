@@ -30,10 +30,6 @@ export function startRippleEffect() {
           toRipple.style.setProperty("--ripple-offset-x", `${offsetX}px`);
           toRipple.style.setProperty("--ripple-offset-y", `${offsetY}px`);
 
-          console.log(
-            getComputedStyle(toRipple).getPropertyValue("--ripple-color")
-          );
-
           toRipple.classList.add("__ripple__active");
 
           toRipple.addEventListener(
