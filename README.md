@@ -2,6 +2,8 @@
 
 A Tailwind plugin to add ripple effects when clicking things
 
+**SUPER DUPER ALPHA: USE AT YOUR OWN RISK, WEIRDOS**
+
 ## Installation
 
 ```sh
