@@ -13,13 +13,13 @@ export function startRippleEffect() {
       if (target instanceof Element) {
         const toRipple = target.closest(".ripple-effect, .ripple-stop");
 
-        // If the closest thing we find is a ripple-stop, we don't want to search
-        // deeper for a ripple-effect to ripple.
-        if (toRipple.classList.contains("ripple-stop")) {
-          return;
-        }
-
         if (toRipple && toRipple instanceof HTMLElement) {
+          // If the closest thing we find is a ripple-stop, we don't want to search
+          // deeper for a ripple-effect to ripple.
+          if (toRipple.classList.contains("ripple-stop")) {
+            return;
+          }
+
           const [offsetX, offsetY] =
             toRipple === target
               ? [e.offsetX, e.offsetY]

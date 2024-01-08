@@ -15,7 +15,7 @@ npm i -D tailwind-plugin-ripple-effect
 Add the plugin to your `tailwind.config.js` file:
 
 ```js
-const rippleEffectPlugin = require("./tw-plugin-ripple-effect");
+const rippleEffectPlugin = require("tailwind-plugin-ripple-effect");
 
 /** @type {import('tailwindcss').Config} */
 export default {
