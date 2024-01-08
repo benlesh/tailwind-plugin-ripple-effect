@@ -1,6 +1,6 @@
 {
   "name": "tailwind-plugin-ripple-effect",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Tailwind plugin for adding ripple animations on click",
   "main": "index.js",
   "files": [
