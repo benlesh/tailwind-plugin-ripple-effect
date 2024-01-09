@@ -16,20 +16,19 @@ exports.default = plugin(({ addUtilities, theme, variants }) => {
     ".ripple-effect": {
       "--ripple-speed": "0.2s",
       "--ripple-color": "14 165 233",
+      "--ripple-on": "0",
+      "background-position": "var(--ripple-unset)",
+      "background-size": "var(--ripple-unset)",
+      "background-origin": "var(--ripple-unset)",
+      "background-clip": "var(--ripple-unset)",
+      "background-attachment": "var(--ripple-unset)",
+      "background-repeat": "var(--ripple-no-repeat)",
+      "background-image":
+        "radial-gradient(circle at var(--ripple-offset-x) var(--ripple-offset-y), rgb(var(--ripple-color) / calc(100% - var(--ripple-on) * var(--ripple-scale))) calc(2 * var(--ripple-on) * var(--ripple-scale)), transparent calc(1.5 * var(--ripple-on) * var(--ripple-scale) + 1%))",
+      animation: "ripple-effect var(--ripple-speed) linear",
     },
     ".ripple-slow": {
       "--ripple-speed": "0.5s",
-    },
-    ".__ripple__active": {
-      "background-position": "unset",
-      "background-size": "unset",
-      "background-origin": "unset",
-      "background-clip": "unset",
-      "background-attachment": "unset",
-      "background-repeat": "no-repeat",
-      "background-image":
-        "radial-gradient(circle at var(--ripple-offset-x) var(--ripple-offset-y), rgb(var(--ripple-color) / calc(100% - var(--ripple-scale))) calc(2 * var(--ripple-scale)), transparent calc(1.5 * var(--ripple-scale) + 1%))",
-      animation: "ripple-effect var(--ripple-speed) linear",
     },
   };
   for (const colorKey of Object.keys(colors)) {
@@ -41,9 +40,9 @@ exports.default = plugin(({ addUtilities, theme, variants }) => {
           utilities[`.ripple-${colorKey}-${variantKey}`] = {
             "--ripple-color": rippleColor,
           };
-          utilities[`.__ripple__active.ripple-bg-${colorKey}-${variantKey}`] = {
-            "background-color": colorVariants[variantKey],
-          };
+          // utilities[`.__ripple__active.ripple-bg-${colorKey}-${variantKey}`] = {
+          //   "background-color": colorVariants[variantKey],
+          // };
         }
       }
     }

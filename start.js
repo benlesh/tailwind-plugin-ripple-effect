@@ -20,6 +20,10 @@ export function startRippleEffect() {
             return;
           }
 
+          toRipple.classList.remove("ripple-effect");
+
+          void toRipple.offsetWidth; // trigger layout
+
           const [offsetX, offsetY] =
             toRipple === target
               ? [e.offsetX, e.offsetY]
@@ -29,13 +33,18 @@ export function startRippleEffect() {
                 ];
           toRipple.style.setProperty("--ripple-offset-x", `${offsetX}px`);
           toRipple.style.setProperty("--ripple-offset-y", `${offsetY}px`);
+          toRipple.style.setProperty("--ripple-on", "1");
+          toRipple.style.setProperty("--ripple-unset", "unset");
+          toRipple.style.setProperty("--ripple-no-repeat", "no-repeat");
 
-          toRipple.classList.add("__ripple__active");
+          toRipple.classList.add("ripple-effect"); // animate
 
           toRipple.addEventListener(
             "animationend",
             () => {
-              toRipple.classList.remove("__ripple__active");
+              toRipple.style.setProperty("--ripple-on", "0");
+              toRipple.style.setProperty("--ripple-unset", "");
+              toRipple.style.setProperty("--ripple-no-repeat", "");
             },
             { once: true, signal: ac.signal }
           );
