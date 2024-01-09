@@ -50,6 +50,7 @@ exports.default = plugin(({ addUtilities, theme, variants }) => {
   }
   addUtilities(utilities, variants("backgroundColor"));
 });
+
 function hexToRgb(hex) {
   let r = 0,
     g = 0,
@@ -76,7 +77,7 @@ function colorToRGBPlain(color) {
   if (color.startsWith("#")) {
     return hexToRgb(color);
   }
-  if (rgb.startsWith("rgb(")) {
+  if (color.startsWith("rgb(")) {
     return rgbToRGBPlain(color);
   }
   if (/^(\d)+\s+(\d)+\s+(\d)+$/.test(color)) {
